@@ -54,14 +54,16 @@ const ArticleGrid = () => {
         </div>
       </div>
       
-      <style jsx>{`
-        @keyframes ultraSlowMove {
-          0%, 100% { transform: translateX(0) translateY(0); }
-          25% { transform: translateX(-2px) translateY(-1px); }
-          50% { transform: translateX(1px) translateY(2px); }
-          75% { transform: translateX(2px) translateY(-2px); }
-        }
-      `}</style>
+      <style>
+        {`
+          @keyframes ultraSlowMove {
+            0%, 100% { transform: translateX(0) translateY(0); }
+            25% { transform: translateX(-2px) translateY(-1px); }
+            50% { transform: translateX(1px) translateY(2px); }
+            75% { transform: translateX(2px) translateY(-2px); }
+          }
+        `}
+      </style>
     </section>
   );
 };

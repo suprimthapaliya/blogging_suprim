@@ -60,12 +60,14 @@ const SlidingMedia = () => {
         </Carousel>
       </div>
       
-      <style jsx>{`
-        @keyframes slowBackground {
-          0%, 100% { background-position: 0% 0%; }
-          50% { background-position: 100% 100%; }
-        }
-      `}</style>
+      <style>
+        {`
+          @keyframes slowBackground {
+            0%, 100% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+          }
+        `}
+      </style>
     </section>
   );
 };
