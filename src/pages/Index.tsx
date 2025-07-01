@@ -1,11 +1,12 @@
 
 import React from 'react';
 import BlogHeader from '../components/BlogHeader';
-import VideoPhotoSection from '../components/VideoPhotoSection';
+import ModernPhotoSection from '../components/ModernPhotoSection';
+import ModernVideoSection from '../components/ModernVideoSection';
 import AboutSection from '../components/AboutSection';
-import FeaturedArticle from '../components/FeaturedArticle';
-import SlidingMedia from '../components/SlidingMedia';
-import ArticleGrid from '../components/ArticleGrid';
+import SlidingPhotosSection from '../components/SlidingPhotosSection';
+import SlidingVideosSection from '../components/SlidingVideosSection';
+import ModernFooter from '../components/ModernFooter';
 import AnimatedBackground from '../components/AnimatedBackground';
 
 const Index = () => {
@@ -14,11 +15,12 @@ const Index = () => {
       <AnimatedBackground />
       <div className="relative z-10">
         <BlogHeader />
-        <VideoPhotoSection />
+        <ModernPhotoSection />
+        <ModernVideoSection />
         <AboutSection />
-        <FeaturedArticle />
-        <SlidingMedia />
-        <ArticleGrid />
+        <SlidingPhotosSection />
+        <SlidingVideosSection />
+        <ModernFooter />
       </div>
     </div>
   );
