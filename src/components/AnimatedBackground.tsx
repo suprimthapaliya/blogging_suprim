@@ -4,105 +4,92 @@ import React from 'react';
 const AnimatedBackground = () => {
   return (
     <div className="fixed inset-0 z-0 overflow-hidden">
-      {/* Water background with flowing waves */}
+      {/* Sky background with flying birds */}
       <div 
-        className="absolute inset-0 bg-gradient-to-b from-blue-400 via-blue-300 to-cyan-200"
+        className="absolute inset-0 bg-gradient-to-b from-sky-300 via-sky-200 to-white"
         style={{
-          animation: 'waterFlow 30s ease-in-out infinite'
+          animation: 'skyShift 40s ease-in-out infinite'
         }}
       />
       
-      {/* Flowing water waves */}
+      {/* Flying birds */}
       <div className="absolute inset-0">
-        {/* Wave layer 1 */}
+        {/* Bird group 1 */}
         <div 
-          className="absolute w-full h-20 opacity-30"
+          className="absolute w-8 h-6 opacity-70"
           style={{
             top: '20%',
-            background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)',
-            animation: 'flowWave1 8s linear infinite'
+            left: '-10%',
+            animation: 'flyBird1 25s linear infinite'
           }}
-        />
+        >
+          <svg viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 12C8 8 12 4 16 8C20 4 24 8 24 12C20 8 16 12 16 12C16 12 12 8 8 12Z" fill="#374151"/>
+          </svg>
+        </div>
         
-        {/* Wave layer 2 */}
+        {/* Bird group 2 */}
         <div 
-          className="absolute w-full h-16 opacity-25"
+          className="absolute w-6 h-4 opacity-60"
           style={{
-            top: '40%',
-            background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent)',
-            animation: 'flowWave2 12s linear infinite 2s'
+            top: '35%',
+            left: '-8%',
+            animation: 'flyBird2 30s linear infinite 5s'
           }}
-        />
+        >
+          <svg viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 8C6 6 9 3 12 6C15 3 18 6 18 8C15 6 12 8 12 8C12 8 9 6 6 8Z" fill="#374151"/>
+          </svg>
+        </div>
         
-        {/* Wave layer 3 */}
+        {/* Bird group 3 */}
         <div 
-          className="absolute w-full h-24 opacity-20"
+          className="absolute w-7 h-5 opacity-50"
           style={{
-            top: '60%',
-            background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)',
-            animation: 'flowWave3 15s linear infinite 4s'
+            top: '15%',
+            left: '-12%',
+            animation: 'flyBird3 35s linear infinite 10s'
           }}
-        />
-        
-        {/* Water ripples */}
-        <div 
-          className="absolute w-32 h-32 rounded-full opacity-10"
-          style={{
-            top: '25%',
-            left: '15%',
-            background: 'radial-gradient(circle, rgba(255,255,255,0.3), transparent)',
-            animation: 'ripple1 6s ease-out infinite'
-          }}
-        />
-        
-        <div 
-          className="absolute w-24 h-24 rounded-full opacity-15"
-          style={{
-            top: '55%',
-            right: '20%',
-            background: 'radial-gradient(circle, rgba(255,255,255,0.4), transparent)',
-            animation: 'ripple2 8s ease-out infinite 3s'
-          }}
-        />
+        >
+          <svg viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 10C7 7 10.5 4 14 7C17.5 4 21 7 21 10C17.5 7 14 10 14 10C14 10 10.5 7 7 10Z" fill="#374151"/>
+          </svg>
+        </div>
       </div>
       
-      {/* Floating bubbles */}
-      <div className="absolute top-1/4 left-1/4 w-6 h-6 bg-white/10 rounded-full animate-pulse opacity-40" style={{ animationDelay: '0s', animationDuration: '3s' }} />
-      <div className="absolute top-1/3 right-1/3 w-4 h-4 bg-white/15 rounded-full animate-pulse opacity-30" style={{ animationDelay: '1s', animationDuration: '4s' }} />
-      <div className="absolute bottom-1/3 left-1/5 w-8 h-8 bg-white/12 rounded-full animate-pulse opacity-35" style={{ animationDelay: '2s', animationDuration: '5s' }} />
+      {/* Floating cloud elements */}
+      <div className="absolute top-1/4 left-1/4 w-20 h-20 bg-white/20 rounded-full animate-pulse opacity-40" style={{ animationDelay: '0s', animationDuration: '4s' }} />
+      <div className="absolute top-1/3 right-1/3 w-16 h-16 bg-white/15 rounded-full animate-pulse opacity-30" style={{ animationDelay: '2s', animationDuration: '6s' }} />
+      <div className="absolute bottom-1/3 left-1/5 w-12 h-12 bg-white/25 rounded-full animate-pulse opacity-35" style={{ animationDelay: '4s', animationDuration: '5s' }} />
       
       <style>
         {`
-          @keyframes waterFlow {
-            0%, 100% { background: linear-gradient(to bottom, #60A5FA, #93C5FD, #A5F3FC); }
-            50% { background: linear-gradient(to bottom, #3B82F6, #60A5FA, #67E8F9); }
+          @keyframes skyShift {
+            0%, 100% { background: linear-gradient(to bottom, #87CEEB, #E0F6FF, #ffffff); }
+            50% { background: linear-gradient(to bottom, #87CEFA, #B0E0E6, #f8fafc); }
           }
           
-          @keyframes flowWave1 {
-            0% { transform: translateX(-100%) skewX(-15deg); }
-            100% { transform: translateX(100vw) skewX(-15deg); }
+          @keyframes flyBird1 {
+            0% { transform: translateX(-100px) translateY(0px) scale(1); }
+            25% { transform: translateX(25vw) translateY(-20px) scale(1.1); }
+            50% { transform: translateX(50vw) translateY(10px) scale(0.9); }
+            75% { transform: translateX(75vw) translateY(-15px) scale(1.05); }
+            100% { transform: translateX(100vw) translateY(5px) scale(1); }
           }
           
-          @keyframes flowWave2 {
-            0% { transform: translateX(-100%) skewX(10deg); }
-            100% { transform: translateX(100vw) skewX(10deg); }
+          @keyframes flyBird2 {
+            0% { transform: translateX(-80px) translateY(0px) scale(1); }
+            30% { transform: translateX(30vw) translateY(15px) scale(0.95); }
+            60% { transform: translateX(60vw) translateY(-10px) scale(1.1); }
+            100% { transform: translateX(100vw) translateY(0px) scale(1); }
           }
           
-          @keyframes flowWave3 {
-            0% { transform: translateX(-100%) skewX(-8deg); }
-            100% { transform: translateX(100vw) skewX(-8deg); }
-          }
-          
-          @keyframes ripple1 {
-            0% { transform: scale(0.8); opacity: 0.3; }
-            50% { transform: scale(1.2); opacity: 0.1; }
-            100% { transform: scale(1.6); opacity: 0; }
-          }
-          
-          @keyframes ripple2 {
-            0% { transform: scale(0.6); opacity: 0.4; }
-            50% { transform: scale(1.1); opacity: 0.2; }
-            100% { transform: scale(1.4); opacity: 0; }
+          @keyframes flyBird3 {
+            0% { transform: translateX(-120px) translateY(0px) scale(1); }
+            20% { transform: translateX(20vw) translateY(-25px) scale(1.15); }
+            40% { transform: translateX(40vw) translateY(5px) scale(0.85); }
+            70% { transform: translateX(70vw) translateY(-10px) scale(1.05); }
+            100% { transform: translateX(100vw) translateY(10px) scale(1); }
           }
         `}
       </style>
